@@ -22,3 +22,16 @@ after_success:
   - docker push lxmondragon/multi-nginx
   - docker push lxmondragon/multi-server
   - docker push lxmondragon/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-304031570860
+  bucket_path: docker-multi
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY 
