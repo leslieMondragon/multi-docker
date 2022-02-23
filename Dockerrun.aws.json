@@ -1,0 +1,10 @@
+{
+    "AWSEBDockerrunVerson": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "lxmondragon/multi-client",
+            "hostname": "client"
+        }
+    ]
+}
